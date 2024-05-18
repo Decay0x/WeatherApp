@@ -1,0 +1,30 @@
+{
+  "name": "setup_template",
+  "version": "1.0.0",
+  "description": "",
+  "private": "true",
+  "scripts": {
+    "watch": "npx webpack --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "tailwindcss": "^3.4.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "css-loader": "^6.3.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "postcss": "^8.3.12",
+    "postcss-import": "^16.1.0",
+    "postcss-loader": "^8.1.1",
+    "postcss-preset-env": "^9.5.11",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
