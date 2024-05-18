@@ -91,7 +91,6 @@ const renderInfo = (data, scale = true, speedMeasure = true) => {
       forecastHourly.textContent = '';
       // Get all the available hours
       const forecastHours = data.forecast.forecastday[0].hour;
-      console.log(forecastHours);
       // and for each hour create and display the info needed
       forecastHours.forEach((hour) => {
         const forecastHour = document.createElement('div');
@@ -138,19 +137,47 @@ const getWeatherData = async (loc) => {
     }
   );
   if (!response.ok) {
+    alert('There was an error with your search please try again');
+    weatherLocation.value = '';
+    spinner.hide();
     throw new Error('Something went wrong ');
   }
   try {
     const data = await response.json();
     weatherLocation.value = '';
-    renderInfo(data)();
+    const celsiusRadio = document.querySelector('#celsius');
+    const fahrenheitRadio = document.querySelector('#fahrenheit');
+
+    celsiusRadio.addEventListener('change', () => {
+      let scale = celsiusRadio.checked ? true : false;
+      let speedMeasure = celsiusRadio.checked ? true : false;
+      renderInfo(data, scale, speedMeasure)();
+    });
+
+    fahrenheitRadio.addEventListener('change', () => {
+      let scale = fahrenheitRadio.checked ? false : true;
+      let speedMeasure = fahrenheitRadio.checked ? false : true;
+      renderInfo(data, scale, speedMeasure)();
+    });
+
+    let scale = celsiusRadio.checked ? true : false;
+    let speedMeasure = celsiusRadio.checked ? true : false;
+    renderInfo(data, scale, speedMeasure)();
     spinner.hide();
   } catch (error) {
     console.error(`HOUSTON ${error}`);
   }
 };
 const getDataBtn = document.getElementById('getDataBtn');
-getDataBtn.addEventListener('click', getWeatherData);
+getDataBtn.addEventListener('click', () => {
+  const weatherLocation = document.getElementById('weatherLocation');
+
+  if (weatherLocation.value.trim() === '') {
+    alert('Please search for a location');
+  } else {
+    getWeatherData();
+  }
+});
 
 window.addEventListener('load', () => {
   getWeatherData('London');

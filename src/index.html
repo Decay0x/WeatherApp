@@ -16,6 +16,18 @@
       <input class="flex-1 rounded-sm outline-none text-black text-center" id="weatherLocation" type="text"
         placeholder="Location" />
       <button class="flex-1 text-sm" id="getDataBtn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+      <div id="measurementsPref" class="px-4">
+        <div class="flex items-center gap-2">
+          <input type="radio" checked id="celsius" name="temperatureScale"
+            class="form-radio h-5 w-5 text-blue-600 focus:ring-blue-500">
+          <label for="celsius" class="text-gray-800">C</label>
+        </div>
+        <div class="flex items-center gap-2">
+          <input type="radio" id="fahrenheit" name="temperatureScale"
+            class="form-radio h-5 w-5 text-red-600 focus:ring-red-500">
+          <label for="fahrenheit" class="text-gray-800">F</label>
+        </div>
+      </div>
     </div>
   </header>
   <main class="lg:max-w-7xl text-white lg:mx-auto lg:w-full">
