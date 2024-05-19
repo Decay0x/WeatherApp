@@ -4,11 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
-html {
-  width: 100vw;
-  height: 100vh;
-}
-
 /* HTML: <div class="loader"></div> */
 .loader {
   width: 108px;

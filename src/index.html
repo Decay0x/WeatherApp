@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bg-sunnyWeather bg-cover bg-no-repeat bg-bottom" lang="en">
+<html class="flex flex-col bg-sunnyWeather bg-cover bg-no-repeat bg-bottom min-h-screen" lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -10,7 +10,7 @@
   <title>Weather App</title>
 </head>
 
-<body class="w-full max-w-full flex flex-col h-full">
+<body class="flex-1 w-full max-w-full flex flex-col h-full">
   <header class="py-4">
     <div class="flex flex-col items-center bg-white py-2 mx-auto rounded-md mt-10 max-w-72 lg:max-w-96 lg:flex-row">
       <input class="flex-1 rounded-sm outline-none text-black text-center" id="weatherLocation" type="text"
@@ -30,7 +30,7 @@
       </div>
     </div>
   </header>
-  <main class="lg:max-w-7xl text-white lg:mx-auto lg:w-full">
+  <main class="flex-1 lg:max-w-7xl text-white lg:mx-auto lg:w-full">
     <div class="block md:flex items-stretch justify-between">
       <div class=" col-span-2 row-span-2 px-4 mb-2" id="generalInfo">
         <div class="flex flex-col">
@@ -68,8 +68,9 @@
       </div>
       <div id="forecastDaily" class="hidden grid-cols-3 justify-items-center items-stretch">
       </div>
+      <!-- flex md:grid-cols-3 justify-items-center items-stretch lg:max-w-5xl lg:mx-auto lg:w-full -->
       <div id="forecastHourly"
-        class="hidden grid-cols-3 justify-items-center items-stretch lg:max-w-5xl lg:mx-auto lg:w-full">
+        class="hidden grid-cols-1 sm:grid-cols-2 justify-items-center gap-4 md:grid-cols-3 md:justify-items-center md:items-stretch lg:max-w-5xl lg:mx-auto lg:w-full">
 
       </div>
     </div>
@@ -93,7 +94,6 @@
       </a>
     </div>
     <footer>
-
 </body>
 
 </html>
